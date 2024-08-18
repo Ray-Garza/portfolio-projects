@@ -1,0 +1,67 @@
+<div class="titulo">
+  <h1>Management</h1>
+</div>
+
+
+  <div class="selectContainer">
+    <mat-form-field>
+        <mat-label>Data</mat-label>
+        <mat-select [formControl]="plots" multiple (selectionChange)="onSelectionChange($event)">
+        <mat-select-trigger>
+            {{ plots.value?.[0]?.nombre || '' }}
+            <span *ngIf="plots.value && plots.value.length > 1" class="select">
+                (+{{ plots.value.length - 1 }} {{ plots.value.length === 2 ? 'other' : 'others' }})
+            </span>      
+        </mat-select-trigger>
+        <mat-option *ngFor="let grafica of graficas" [value]="grafica">{{ grafica.nombre }}</mat-option>
+        </mat-select>
+    </mat-form-field>   
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" [ngClass]="{'show': esModal}">
+    <div class="modal-content">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+      <h2>Select plot to delete</h2>
+      <div class="selectContainer">
+        <mat-form-field>
+            <mat-label>Data</mat-label>
+            <mat-select [formControl]="plotsModal" (selectionChange)="onSelectionModalChange($event)">
+            <mat-select-trigger>
+              {{ plotsModal.value?.nombre || 'Select an option' }}    
+            </mat-select-trigger>
+            <mat-option *ngFor="let grafica of graficas" [value]="grafica">{{ grafica.nombre }}</mat-option>
+            </mat-select>
+        </mat-form-field>   
+      </div>
+      <div class="modal-buttons">
+        <button (click)="confirmarBorrar()">Confirm</button>
+        <button (click)="cerrarModal()">Return</button>
+      </div>
+    </div>
+  </div>
+
+  <form #graficaForm="ngForm">
+    <div>
+      <label for="nombre">Group name:</label>      
+      <input id="nombre" name="nombre" type="text" [(ngModel)]="nombreGrupo" required>
+    </div>  
+    
+    <div>
+      <label for="nombre">Main plot:</label>      
+      <select id="graficaSelect"  (change)="onGraficaChange($event) ">
+        <option *ngFor="let grafica of plots.value" [value]="grafica.id">{{ grafica.nombre }}</option>
+      </select>
+      
+    </div>
+  </form>
+
+  <div class="chart-container">
+    <canvas id="chart-data"></canvas>
+  </div>
+
+  <div class="buttons">    
+    <button class="start-button" id="save" (click)="guardarGrupo()">Save</button>    
+    <button class="start-button" id="delete" (click)="abrirModal()">Delete</button>    
+  </div> 
+  

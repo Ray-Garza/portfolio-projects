@@ -1,0 +1,67 @@
+/*-- french-violet: #7400b8ff;
+-- grape: #6930c3ff;
+-- slate-blue: #5e60ceff;
+-- united-nations-blue: #5390d9ff;
+-- picton-blue: #4ea8deff;
+-- aero: #48bfe3ff;
+-- sky-blue: #56cfe1ff;
+-- tiffany-blue: #64dfdfff;
+-- turquoise: #72efddff;
+-- aquamarine: #80ffdbff;
+*/
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+body {
+    background-color: #80FFDB;
+    margin: 0;
+    padding: 0;
+}
+
+
+.titulo h1 {    
+    background-color:#5E60CE ; /* Color de fondo para todo el componente      */
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*/
+
+.tabs-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;        
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.tabs-container button {
+    height: 45px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgb(236, 236, 236);
+    flex-grow: 1;
+    color: #5E60CE;
+    transition: background-color 0.3s ease;
+}
+
+.tabs-container button:active {
+    background-color: #7400b8ff
+}
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    width:97%;height:300px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+  }

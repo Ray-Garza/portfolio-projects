@@ -1,0 +1,50 @@
+<div class="titulo">
+  <h1>Measurement</h1>
+</div>
+
+
+<form #graficaForm="ngForm">
+  <div>
+    <label for="nombre">Plot name:</label>
+    <input id="nombre" name="nombre" type="text" [(ngModel)]="nombreGrafica" required>
+  </div>
+  <!--
+  <div>
+    <label for="dominioInicio">Domain Start:</label>
+    <input id="dominioInicio" name="dominioInicio" type="number" [(ngModel)]="dominioInicioGrafica" required>
+  </div>
+  <div>
+    <label for="dominioFinal">Domain End:</label>
+    <input id="dominioFinal" name="dominioFinal" type="number" [(ngModel)]="dominioFinalGrafica" required>
+  </div>
+  -->
+
+</form>
+
+<div style="height: 75px;"></div>
+
+<div class="chart-container" style="margin-bottom: 25px;">
+  <canvas id="chart-canvas"></canvas>
+</div>
+<!--(chartHover)="chartHovered($event)"
+  (chartClick)="chartClicked($event)"-->
+
+  <!--
+<div id="graph-container" style="width:99%;height:400px; margin-left:2px;margin-right: 2px;"></div>
+-->
+<div class="content">      
+  <div class="buttons" style="display:flex; justify-content: center;  width: 100%;">
+      <button class="start-button" id="start" (click)="iniciarRotacionYMedir()">Start</button>
+      <button class="start-button" id="stop" (click)="detenerRotacion()">Stop</button>
+      <button class="start-button" id="reset" (click)="resetGrafica()">Reset</button>
+      <button class="start-button" id="save" (click)="guardarGrafica(graficaForm)">Save</button>      
+  </div>                    
+</div>  
+<div style="display:flex; justify-content: center;  width: 100%;">
+    <button  id="free" (click)="modoLibre()">Free Mode</button>
+</div>
+
+<div *ngIf="errorForm">
+  <label style="color: red;">Error. Data is not complete</label>
+</div>
+

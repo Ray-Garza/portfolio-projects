@@ -1,0 +1,98 @@
+.selectContainer{
+    display: flex;
+    justify-content: center;
+  }
+  .select {    
+    opacity: 0.75;
+    font-size: 0.75em;
+    
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;    
+    font-size: 18px;
+  }
+
+
+
+  button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: #5E60CE;
+    color: #fff;
+    border: none;
+    border-radius: 4px;    
+    /*transition: background-color 0.3s ease;*/
+  }
+  
+  button:active {
+    background-color: #7400b8ff;
+  }
+
+
+  .modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija para superposición */
+    z-index: 1; /* Se asegura que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Permite scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro con opacidad */
+  }
+  
+  /* Mostrar el modal */
+  .modal.show {
+    display: block;
+  }
+  
+  /* Estilo para el contenido del modal */
+  .modal-content {
+    background-color: #ffffff;
+    margin: 80% auto; /* Centrado verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Ancho del modal */
+    max-width: 600px; /* Ancho máximo del modal */
+    text-align: center; /* Centrado del texto */
+  }
+
+  /* Botón de cierre */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.toggleButton.active {
+  background-color: #7400b8ff;
+  color: white;
+}
+
+.tabla{  
+
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 95%; /* Ajusta esto según tus necesidades */
+  overflow-x: auto;
+
+}
+table {
+  width: 50%;  
+  margin-bottom: 50px;
+}

@@ -1,0 +1,78 @@
+  
+ 
+  
+  /* Estilos para los botones */  
+  .sensor-controls {
+    display:flex;
+    margin-top: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  
+
+
+  button {
+    height: 35px;     
+    margin-bottom: 10px;
+    /*margin-left: 10px;*/
+    font-size: 16px;    
+    background-color: #5E60CE;
+    color: #fff;
+    border: none;
+    border-radius: 4px;    
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* Centrado horizontal */
+    display: block; /* Para que el margen automático funcione */
+  }
+  
+  button:active {
+    background-color: #7400b8ff;
+  }
+
+
+  form div {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para las etiquetas */
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;  
+    font-size: 22px;  
+  }
+  
+  /* Estilos para los campos de entrada */
+  form input[type="text"],
+  form input[type="number"] {
+    width: calc(90% - 12px); /* Ajusta el ancho para compensar el padding */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  /* Estilos para los campos de entrada en foco */
+  form input[type="text"]:focus,
+  form input[type="number"]:focus {
+    border-color: #5e60ce;
+    outline: none;
+    box-shadow: 0 0 5px rgba(94, 96, 206, 0.5);
+  }
+  
+  /* Estilos para los campos de entrada inválidos */
+  form input[type="text"]:invalid,
+  form input[type="number"]:invalid {
+    border-color: #e74c3c;
+  }
+  
+  /* Estilos para los campos de entrada válidos */
+  form input[type="text"]:valid,
+  form input[type="number"]:valid {
+    border-color: #2ecc71;
+  }
+  

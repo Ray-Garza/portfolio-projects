@@ -1,0 +1,88 @@
+
+<div class="titulo">
+  <h1>Configuration</h1>
+</div>
+<div style="margin-top: 20px;">
+<form #graficaForm="ngForm">
+  <div>
+    <label for="sensorValue">Sensor Value:</label>      
+    <input id="sensorValue" name="sensorValue" type="text" [(ngModel)]="sensorValue" required>
+  </div>  
+
+  <div>
+    <label for="degree">Degree:</label>      
+    <input id="degree" name="degree" type="text" [(ngModel)]="degree" required>
+  </div>  
+
+  <div>
+    <label for="deviceId">Device id:</label>      
+    <input id="deviceId" name="deviceId" type="text" [(ngModel)]="deviceId" required>
+  </div>  
+
+  <div>
+    <label for="angularSpeed">Revolutions per Minute (0-17):</label>      
+    <input id="angularSpeed" name="angularSpeed" type="text" [(ngModel)]="angularSpeed" required>
+  </div>  
+
+  <div>
+    <label for="degreesToRotate">Degrees per turn:</label>      
+    <input id="degreesToRotate" name="degreesToRotate" type="text" [(ngModel)]="degreesToRotate" required>
+  </div>  
+
+  <div>
+    <label for="turnsToRotate">Laps to rotate:</label>      
+    <input id="turnsToRotate" name="turnsToRotate" type="text" [(ngModel)]="turnsToRotate" required>
+  </div>
+
+  <div>
+    <label for="turnsToRotate">Points per degree:</label>      
+    <input id="turnsToRotate" name="turnsToRotate" type="text" [(ngModel)]="pointsPerDegree" required>
+  </div>
+</form>
+</div>
+  
+
+
+<div class="sensor-controls">
+  <button (mousedown)="turn()" (touchstart)="turn()" (mouseup)="unTurn()" (touchend)="unTurn()"><i class="fa-solid fa-circle-left fa-xl"></i></button>  
+  <button (click)="rotate()" style="padding-left: 15px; padding-right: 15px;">Rotate</button>
+  <button (mousedown)="turn()" (touchstart)="turn()" (mouseup)="unTurn()" (touchend)="unTurn()"><i class="fa-solid fa-circle-right fa-xl"></i></button>
+</div>
+
+<div class="configuration-buttons">
+  <button style="margin-top: 20px; padding: 10px; padding-left: 15px; padding-right: 15px;" (click)="upload()">Upload</button>
+
+</div>
+
+
+<!--
+<div class="settings-container">
+    <h1>Sensor Configuration</h1>
+    
+    <div class="measurement-value">
+      <label>Sensor Value: </label>
+      <label class="textBox">{{sensorValue}}</label> 
+    </div>
+    
+    <div class="configuration-settings">
+      <label>Device id: </label>
+      <input type="text" [(ngModel)]="deviceId">
+    </div>
+
+    <div class="speed-settings">
+      <label>Revolutions per Minute (0-17): </label>
+      <input type="text" [(ngModel)]="angularSpeed">
+    </div>
+    
+    <div class="rotation-settings">
+      <label>Degrees per turn</label>
+      <input type="text" [(ngModel)]="degreesToRotate">
+    </div>
+    
+    <div class="rotation-settings">
+      <label>Laps to rotate</label>
+      <input type="text" [(ngModel)]="turnsToRotate">
+    </div>
+</div>
+-->
+  
