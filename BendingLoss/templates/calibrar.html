@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'historial.css' %}">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        {% csrf_token %}
+        
+        
+        <!--
+        <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta1-dist/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>-->
+    
+    <!---->
+        <!---->
+<!---->
+        <title>BendingLoss Sensor Online | Calibration </title>
+    </head>
+    <body>
+        <div class="menu">        
+
+            <img src="{% static 'fcfm.png' %}" alt="" class="logo">
+            <button class="menu-button" onclick="location.href='/calibration'">Calibration</button>
+            <button class="menu-button" id="weigh-button" >Weigh</button>
+            <button class="menu-button" onclick="location.href='/history'">History</button>
+            <button class="menu-button" onclick="location.href='/'">About us</button>
+        </div>
+        
+        <div id="calibration-container">
+          <h1>Calibration</h1>
+          <div id="graph-container" style="width:100%;height:500px;"></div>
+          <div class="content">
+              <!--<img class ="graph" src="data:image/png;base64,{{ image }}" alt="Calibration Graph">-->
+              <div class="buttons">
+                <button class="start-button" id="start">Start</button>
+                <button class="start-button" id="stop">Stop</button>
+                <button class="start-button" id="pause">Pause</button>
+              </div>
+              <div class="label-container">
+                  <label class="label-text" id="stable-decibel">Stable voltage level: {{ stable_decibel }}</label>
+              </div>
+              <div class="label-container">
+                  <label class="label-text" id="output">Output: {{ output }}</label>
+              </div>
+              
+          </div>
+        </div>
+        
+        <div id="weigh-container" style="display:none;">
+          <h1>Weigh</h1>
+          <div id="graph-weigh" style="width:100%;height:500px;"></div>
+          <div class="content">
+            
+
+            <div class="buttons">
+                <button class="start-button" id="startW">Start</button>
+                <button class="start-button" id="stopW">Stop</button>
+                <button class="start-button" id="pauseW">Pause</button>
+            </div>
+            <div class="label-container">
+                <label class="label-text" id="weigh">Weigh: {{ weigh }}</label>
+            </div>
+            <div class="label-container">
+                <label class="label-text" id="outputW">Output: {{ output }}</label>
+            </div>
+            
+            </div>
+        </div>
+
+        <script src="{% static 'conexion.js' %}"></script>
+    </body>
+</html>

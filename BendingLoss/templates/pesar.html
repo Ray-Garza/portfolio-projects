@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'historial.css' %}">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        {% csrf_token %}
+
+        <title>Sensor Fotodiodo | Weigh </title>
+    </head>
+    <body>
+        <div class="menu">
+            <img src="{% static 'fcfm.png' %}" alt="" class="logo">
+            <button class="menu-button" onclick="location.href='/calibration'">Calibration</button>
+            <button class="menu-button" onclick="location.href='/weigh'">Weigh</button>
+            <button class="menu-button" onclick="location.href='/history'">History</button>
+            <button class="menu-button" onclick="location.href='/'">About us</button>
+        </div>
+        <div id="weigh-container">
+            <h1>Weigh</h1>
+            <div id="graph-weigh" style="width:100%;height:500px;"></div>
+            <div class="content">
+              
+  
+              <div class="buttons">
+                  <button class="start-button" id="start">Start</button>
+                  <button class="start-button" id="stop">Stop</button>
+                  <button class="start-button" id="pause">Pause</button>
+              </div>
+              <div class="label-container">
+                  <label class="label-text" id="weigh">Weigh: {{ weigh }}</label>
+              </div>
+              <div class="label-container">
+                  <label class="label-text" id="outputW">Output: {{ output }}</label>
+              </div>
+              
+          </div>
+        </div>  
+        <script src="{% static 'pesar.js' %}"></script>
+    </body>
+</html>

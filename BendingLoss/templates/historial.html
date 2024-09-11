@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'historial.css' %}">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        {% csrf_token %}
+        <title>BendingLoss Sensor Online | History </title>
+    </head>
+    <body>
+        <div class="menu">
+            <img src="{% static 'fcfm.png' %}" alt="" class="logo">
+            <button class="menu-button" onclick="location.href='/calibration'">Calibration</button>
+            <button class="menu-button" id="weigh-button">Weigh</button>
+            <button class="menu-button" onclick="location.href='/history'">History</button>
+            <button class="menu-button" onclick="location.href='/'">About us</button>
+            
+        </div>
+        <h1 class="title">History</h1>
+        <div class="content">
+            <div class="date">
+                <div class="label-container">
+                    <label class="label-text">Date: {{ date }}</label>
+                </div>  
+                <select class="select" id="select"></select>
+
+                <button class="delete-button" id="delete">Delete Graph</button>
+
+            </div>
+            <div id="graph-container" style="width:100%;height:500px;"></div>
+                      
+
+            
+            <div class="label-container">
+                <label class="label-text" id="voltaje_estable">Stable voltage level: {{ stable_decibel }}</label>
+            </div>
+            <div class="label-container">
+                <label class="label-text">Weigh: {{ Weigh }}</label>
+            </div>
+
+           
+        </div>
+
+        <script src="{% static 'historial.js' %}"></script>
+    </body>
+</html>
