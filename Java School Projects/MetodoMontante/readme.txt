@@ -1,0 +1,1 @@
+This program implements the Montante Method, a matrix-based approach, to calculate the solutions of a system of linear equations efficiently.
